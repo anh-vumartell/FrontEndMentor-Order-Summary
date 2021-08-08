@@ -1,0 +1,14 @@
+{
+  "name": "order-summary-component-main",
+  "version": "1.0.0",
+  "description": "Order Summary Component",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass styles/sass/main.scss styles/css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

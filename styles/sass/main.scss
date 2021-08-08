@@ -1,0 +1,184 @@
+// ### Primary
+
+// - Pale blue: hsl(225, 100%, 94%)
+// - Bright blue: hsl(245, 75%, 52%)
+
+// ### Neutral
+
+// - Very pale blue: hsl(225, 100%, 98%)
+// - Desaturated blue: hsl(224, 23%, 55%)
+// - Dark blue: hsl(223, 47%, 23%)
+
+//Variable Declarations
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+$primary-color__pale: hsl(225, 100%, 94%);
+$primary-color__bright: hsl(245, 75%, 52%);
+$neutral-color__pale: hsl(225, 100%, 98%);
+$neutral-color__desaturated: hsl(224, 23%, 55%);
+$neutral-color__dark: hsl(223, 47%, 23%);
+$font-stack: "Red Hat Display", sans-serif;
+$font-sm: 12px;
+$font-md: 18px;
+$font-lg: 24px;
+$shadow-inset: 0.5px 15px 30px;
+
+//Global styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $primary-color__pale;
+  font-family: $font-stack;
+  font-size: $font-md;
+}
+p {
+  color: $neutral-color__desaturated;
+  opacity: 1.2;
+  text-align: center;
+  padding-top: 0.3rem;
+  font-size: $font-sm;
+}
+a {
+  color: $neutral-color__dark;
+}
+//Mixins
+@mixin flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-container {
+  @include flex-container;
+  flex-direction: column;
+}
+.card-container {
+  @include flex-container;
+  background-color: $neutral-color__pale;
+  flex-direction: column;
+  border-radius: 20px;
+  min-height: 90vh;
+  box-shadow: $shadow-inset $neutral-color__desaturated;
+  margin: 3rem 1.5rem;
+
+  background-image: url(/images/illustration-hero.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+// .card-details {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-items: flex-end;
+//   margin: 3rem 1rem;
+// }
+
+.card-header {
+  @include flex-container;
+  flex-direction: column;
+  line-height: 1.5rem;
+  margin-top: 10rem;
+  max-width: 80%;
+  // min-height: 10vh;
+
+  h2 {
+    margin: 0.5rem auto;
+    color: $neutral-color__dark;
+    font-weight: 900;
+    font-size: $font-lg;
+  }
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: $neutral-color__pale;
+  box-shadow: $shadow-inset $primary-color__pale;
+  border-radius: 10px;
+  margin: 1.2rem auto;
+  width: 90%;
+  height: 12vh;
+  padding: 0.6rem;
+  font-size: $font-sm;
+}
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+
+  button {
+    border: none;
+    height: 3rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    font-weight: 900;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: $primary-color__bright;
+    color: $neutral-color__pale;
+    transition: 0.4s all linear;
+    box-shadow: $shadow-inset $neutral-color__desaturated;
+  }
+  button:hover {
+    background-color: $primary-color__pale;
+    color: $neutral-color__desaturated;
+  }
+}
+
+.attribution {
+  font-size: $font-sm;
+  text-align: center;
+  max-width: 60%;
+  margin-bottom: 1rem;
+}
+
+//DESKTOP
+@media screen and (min-width: 600px) {
+  p {
+    font-size: $font-md;
+    line-height: 2rem;
+  }
+  a {
+    font-size: $font-md;
+  }
+  .page-container {
+    background-image: url(/images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+  .card-container {
+    height: 70vh;
+    max-width: 550px;
+  }
+  .card-header {
+    max-width: 70%;
+    padding-top: 5rem;
+    h2 {
+      font-size: $font-lg + 10;
+    }
+  }
+
+  .order-info {
+    width: 85%;
+    height: 10vh;
+    padding: 1rem;
+    margin: 2rem;
+
+    h3 {
+      font-size: $font-md;
+    }
+  }
+  .order-actions {
+    width: 85%;
+    button {
+      font-size: $font-md;
+      height: 4rem;
+    }
+  }
+}
