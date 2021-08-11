@@ -38,7 +38,8 @@ p {
   color: $neutral-color__desaturated;
   opacity: 1.2;
   text-align: center;
-  padding-top: 0.3rem;
+  padding: 1rem 3rem;
+
   font-size: $font-sm;
 }
 a {
@@ -53,15 +54,20 @@ a {
 .page-container {
   @include flex-container;
   flex-direction: column;
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: -600px -150px;
+  background-size: cover;
 }
 .card-container {
   @include flex-container;
   background-color: $neutral-color__pale;
   flex-direction: column;
   border-radius: 20px;
-  min-height: 90vh;
+  height: 700px;
+  max-width: 600px;
   box-shadow: $shadow-inset $neutral-color__desaturated;
-  margin: 3rem 1.5rem;
+  margin: 6rem 1rem;
 
   background-image: url(/images/illustration-hero.svg);
   background-repeat: no-repeat;
@@ -80,12 +86,14 @@ a {
   @include flex-container;
   flex-direction: column;
   line-height: 1.5rem;
-  margin-top: 10rem;
-  max-width: 80%;
+  margin-top: 6rem;
+  max-width: 400px;
+  padding-top: 2.5rem;
+  // padding: 0.5rem 2rem;
   // min-height: 10vh;
 
   h2 {
-    margin: 0.5rem auto;
+    margin-top: 2rem;
     color: $neutral-color__dark;
     font-weight: 900;
     font-size: $font-lg;
@@ -94,15 +102,14 @@ a {
 
 .order-info {
   display: grid;
-  grid-template-columns: 60px 150px auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
   align-items: center;
   background-color: $neutral-color__pale;
   box-shadow: $shadow-inset $primary-color__pale;
   border-radius: 10px;
-  margin: 1.2rem auto;
   width: 90%;
-  height: 12vh;
-  padding: 0.6rem;
+  height: 100px;
   font-size: $font-sm;
 
   h3 {
@@ -112,14 +119,24 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    align-content: flex-start;
+    .order-type__price {
+      padding: 0;
+    }
+  }
+
+  .change-btn {
+    border: none;
+    background-color: $neutral-color__pale;
   }
 }
 .order-actions {
   display: flex;
   flex-direction: column;
   width: 95%;
+  margin-top: 3rem;
 
-  button {
+  .action-btn {
     border: none;
     height: 3rem;
     margin: 0.5rem;
@@ -132,7 +149,7 @@ a {
     transition: 0.4s all linear;
     box-shadow: $shadow-inset $neutral-color__desaturated;
   }
-  button:hover {
+  .action-btn:hover {
     background-color: $primary-color__pale;
     color: $neutral-color__desaturated;
   }
@@ -143,52 +160,4 @@ a {
   text-align: center;
   max-width: 60%;
   margin-bottom: 1rem;
-}
-
-//DESKTOP
-@media screen and (min-width: 590px) {
-  p {
-    font-size: $font-md;
-    line-height: 2rem;
-  }
-  a {
-    font-size: $font-md;
-  }
-  .page-container {
-    background-image: url(/images/pattern-background-desktop.svg);
-    background-repeat: no-repeat;
-    background-position: -600px -300px;
-    background-size: cover;
-  }
-  .card-container {
-    height: 900px;
-    max-width: 550px;
-  }
-  .card-header {
-    max-width: 70%;
-    // padding-top: 3rem;
-    h2 {
-      font-size: $font-lg + 10;
-    }
-  }
-
-  .order-info {
-    grid-template-columns: 85px 280px auto;
-
-    width: 85%;
-    height: 100px;
-    padding: 1rem;
-    // margin: 2rem;
-
-    h3 {
-      font-size: $font-md;
-    }
-  }
-  .order-actions {
-    width: 85%;
-    button {
-      font-size: $font-md;
-      height: 4rem;
-    }
-  }
 }

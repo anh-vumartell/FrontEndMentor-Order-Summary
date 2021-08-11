@@ -15,7 +15,7 @@ p {
   color: #7280a7;
   opacity: 1.2;
   text-align: center;
-  padding-top: 0.3rem;
+  padding: 1rem 3rem;
   font-size: 14px;
 }
 
@@ -28,6 +28,10 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: -600px -150px;
+  background-size: cover;
 }
 
 .card-container {
@@ -37,9 +41,10 @@ a {
   background-color: #f5f7ff;
   flex-direction: column;
   border-radius: 20px;
-  min-height: 90vh;
+  height: 700px;
+  max-width: 600px;
   box-shadow: 0.5px 15px 30px #7280a7;
-  margin: 3rem 1.5rem;
+  margin: 6rem 1rem;
   background-image: url(/images/illustration-hero.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -52,12 +57,13 @@ a {
   align-items: center;
   flex-direction: column;
   line-height: 1.5rem;
-  margin-top: 10rem;
-  max-width: 80%;
+  margin-top: 6rem;
+  max-width: 400px;
+  padding-top: 2.5rem;
 }
 
 .card-header h2 {
-  margin: 0.5rem auto;
+  margin-top: 2rem;
   color: #1f2f56;
   font-weight: 900;
   font-size: 24px;
@@ -65,15 +71,14 @@ a {
 
 .order-info {
   display: grid;
-  grid-template-columns: 60px 150px auto;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
   align-items: center;
   background-color: #f5f7ff;
   box-shadow: 0.5px 15px 30px #e0e8ff;
   border-radius: 10px;
-  margin: 1.2rem auto;
   width: 90%;
-  height: 12vh;
-  padding: 0.6rem;
+  height: 100px;
   font-size: 14px;
 }
 
@@ -85,15 +90,26 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-content: flex-start;
+}
+
+.order-info .order-type .order-type__price {
+  padding: 0;
+}
+
+.order-info .change-btn {
+  border: none;
+  background-color: #f5f7ff;
 }
 
 .order-actions {
   display: flex;
   flex-direction: column;
   width: 95%;
+  margin-top: 3rem;
 }
 
-.order-actions button {
+.order-actions .action-btn {
   border: none;
   height: 3rem;
   margin: 0.5rem;
@@ -107,7 +123,7 @@ a {
   box-shadow: 0.5px 15px 30px #7280a7;
 }
 
-.order-actions button:hover {
+.order-actions .action-btn:hover {
   background-color: #e0e8ff;
   color: #7280a7;
 }
@@ -117,47 +133,5 @@ a {
   text-align: center;
   max-width: 60%;
   margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 590px) {
-  p {
-    font-size: 18px;
-    line-height: 2rem;
-  }
-  a {
-    font-size: 18px;
-  }
-  .page-container {
-    background-image: url(/images/pattern-background-desktop.svg);
-    background-repeat: no-repeat;
-    background-position: -600px -300px;
-    background-size: cover;
-  }
-  .card-container {
-    height: 900px;
-    max-width: 550px;
-  }
-  .card-header {
-    max-width: 70%;
-  }
-  .card-header h2 {
-    font-size: 34px;
-  }
-  .order-info {
-    grid-template-columns: 85px 280px auto;
-    width: 85%;
-    height: 100px;
-    padding: 1rem;
-  }
-  .order-info h3 {
-    font-size: 18px;
-  }
-  .order-actions {
-    width: 85%;
-  }
-  .order-actions button {
-    font-size: 18px;
-    height: 4rem;
-  }
 }
 /*# sourceMappingURL=main.css.map */
